@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+@import "primeicons/primeicons.css";
+/* PrimeNG Theme Customization */
+:root {
+    --primary-color: #EDDC94;
+    --primary-color-text: #1B1710;
+    --surface-ground: #FEFDF9;
+    --surface-section: #FEFDF9;
+    --surface-card: #FEFDF9;
+    --surface-overlay: #FEFDF9;
+    --surface-border: #EDDC94;
+    --text-color: #1B1710;
+    --text-color-secondary: #1B1710;
+    --focus-ring: #EDDC94;
+}
+
+.p-button {
+    background: #EDDC94 !important;
+    color: #1B1710 !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+  }
+
+.p-button:hover {
+    background-color: #1B1710 !important;
+    border-color: #1B1710 !important;
+    color: #FEFDF9 !important   ;
+  }
+/* Custom styles for PrimeNG components */
+/* ::ng-deep .p-button {
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+    border: none;
+}
+
+::ng-deep .p-button:hover {
+    background: #1B1710;
+    color: #FEFDF9;
+}
+
+::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    background-color: #EDDC94;
+}
+
+::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: #1B1710;
+} */
+
+
+body{
+    margin: 0;
+}

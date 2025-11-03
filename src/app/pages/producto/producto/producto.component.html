@@ -1,0 +1,62 @@
+<!-- <ng-container *ngIf="loading">
+    <div class="loading">Cargando...</div>
+</ng-container> -->
+
+<ng-container *ngIf="error">
+    <div class="error">{{ error }}</div>
+</ng-container>
+
+<ng-container *ngIf="serviceDetail && !loading && !error">
+    <section class="hero-section">
+        <div class="hero-background" [style.background-image]="'url(' + serviceDetail.backgroundImage + ')'">
+            <div class="hero-overlay">
+                <h1 class="hero-title">{{ serviceDetail.title }}</h1>
+                <h2 class="hero-subtitle">{{ serviceDetail.subtitle }}</h2>
+                <app-button></app-button>
+            </div>
+        </div>
+    </section>
+    <div class="projects-container">
+        <h3 class="projects-title">Nuestros proyectos</h3>
+        <div class="project-card" *ngFor="let project of serviceDetail.projects">
+            <div class="project-header">
+                <h3 class="project-title">{{ project.title }}</h3>
+                <p class="project-description">{{ project.description }}</p>
+            </div>
+
+            <div class="project-main-image">
+                <img [src]="project.image" [alt]="project.title" />
+            </div>
+
+            <div class="project-galleries">
+                <div class="gallery-section" *ngIf="getMaterialImages(project).length > 0">
+                    <h4 class="gallery-title">Materiales de este proyecto</h4>
+                    <p-galleria [value]="getMaterialImages(project)" [autoPlay]="true" [circular]="true"
+                        [responsiveOptions]="responsiveOptions" [numVisible]="3" [showThumbnails]="true"
+                        [showIndicators]="false" [containerStyle]="{ 'max-width': '100%', 'margin': '0 auto' }">
+                        <ng-template pTemplate="thumbnail" let-item>
+                            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" />
+                        </ng-template>
+                    </p-galleria>
+                </div>
+
+                <div class="gallery-section" *ngIf="getAccessoryImages(project).length > 0">
+                    <h4 class="gallery-title">Accesorios de este proyecto</h4>
+                    <p-galleria [value]="getAccessoryImages(project)" [autoPlay]="true" [circular]="true"
+                        [responsiveOptions]="responsiveOptions" [numVisible]="3" [showThumbnails]="true"
+                        [showIndicators]="false" [containerStyle]="{ 'max-width': '100%', 'margin': '0 auto' }">
+                        <ng-template pTemplate="thumbnail" let-item>
+                            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" />
+                        </ng-template>
+                    </p-galleria>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-galleria-marcas></app-galleria-marcas>
+
+    <div class="brands-section-content-container">
+        <app-button></app-button>
+    </div>
+</ng-container>

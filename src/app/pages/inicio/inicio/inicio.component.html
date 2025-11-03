@@ -1,0 +1,95 @@
+<main>
+  <div *ngIf="loading" class="global-loading">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+
+  <section *ngIf="!loading">
+    <div class="fondo">
+      <img [src]="landingPageContent?.content?.hero?.backgroundImage" alt="Fondo" class="fondo-img" loading="eager">
+      <div class="overlay">
+          <img [src]="landingPageContent?.content?.hero?.logo" alt="Logo de Todo Muebles" class="logo" loading="eager">
+          <h1 id="frase-logo">{{ landingPageContent?.content?.hero?.mainTitle }}</h1>
+          <app-button></app-button>
+      </div>
+    </div>
+  </section>
+
+  <section class="resumen" *ngIf="!loading">
+    <div class="imagen-resumen">
+      <div class="imagen-resumen-icon">
+        <img src="img/apreton-de-manos (3).png" alt="Apretón de manos" class="img" loading="eager">
+      </div>
+      <h2>Comprometidos con tu confianza</h2>
+    </div>
+    <div class="imagen-resumen">
+      <div class="imagen-resumen-icon">
+        <img src="img/martillo (1).png" alt="Martillo" class="img" loading="eager">
+      </div>
+      <h2>Diseñamos con experiencia, fabricamos con valores</h2>
+    </div>
+    <div class="imagen-resumen">
+      <div class="imagen-resumen-icon">
+        <img src="img/calidad.png" alt="Materiales de calidad" class="img" loading="eager">
+      </div>
+      <h2>Materiales de calidad</h2>
+    </div>
+  </section>
+  
+  <app-slider-inicio></app-slider-inicio>
+
+  <section class="video-section" *ngIf="!loading">
+    <h2 id="video-title">¿Cómo lo logramos?</h2>
+    <p id="video-text">Cada proyecto comienza con una idea.</p>
+    <video controls id="video1" *ngIf="firstVideoUrl" preload="metadata">
+      <source [src]="firstVideoUrl" type="video/mp4">
+    </video>
+    
+    <video controls id="video2" *ngIf="secondVideoUrl" preload="metadata">
+      <source [src]="secondVideoUrl" type="video/mp4">
+    </video>
+    <p id="video-text2">Tu formas parte de esa idea.</p>
+  </section>
+
+  <section class="imagen-comparacion-section" *ngIf="!loading">
+    <div class="imagen-comparacion">
+      <p>Nosotros la modelamos</p>
+      <p-imagecompare class="shadow-lg rounded-2xl" *ngIf="beforeImage && afterImage">
+        <ng-template #left>
+            <img [src]="afterImage" alt="Before" loading="eager" />
+        </ng-template>
+        <ng-template #right>
+            <img [src]="beforeImage" alt="After" loading="eager" />
+        </ng-template>
+      </p-imagecompare>
+    </div>
+  </section>
+
+  <section class="imagen-comparacion-section" *ngIf="!loading">
+    <div class="imagen-comparacion">
+      <p>Lo construimos</p>
+      <video width="1000vh" height="auto" controls *ngIf="thirdVideoUrl" preload="metadata">
+        <source [src]="thirdVideoUrl" type="video/mp4">
+      </video>  
+    </div>
+  </section>
+  
+  <app-galleria-marcas></app-galleria-marcas>
+
+  <section class="marcas-section" *ngIf="!loading">
+    <div>
+      <p>Al final,<br> Terminamos un proyecto, <br>pero comenzamos una historia juntos</p>
+      <app-button></app-button>
+      <hr class="custom-hr">
+    </div>
+  </section>
+
+  <section class="nosotos-section" *ngIf="!loading">
+    <h2>Más que diseñar cocinas, construimos confianza</h2>
+    <video width="1000vh" height="auto" controls *ngIf="fourthVideoUrl" preload="metadata">
+      <source [src]="fourthVideoUrl" type="video/mp4">
+    </video>
+    <p>Conoce la historia, los valores y la pasión detras de cada proyecto.</p>
+    <p>En Todo Muebles, cada detalle habla de quienes somos.</p>
+    <app-nosotros-button></app-nosotros-button>
+  </section>
+</main>

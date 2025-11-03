@@ -1,0 +1,115 @@
+<main class="contact-form-container">
+    <p-toast></p-toast>
+    <div class="contact-form-container-title">
+        <img [src]="logoUrl" alt="Logo de Todo Muebles" class="logo">
+        <h1>Contacto</h1>
+        <p>Agenda tu cotización llenando el formulario</p>
+    </div>
+    
+    <form class="contact-form" (ngSubmit)="onSubmit($event)">
+        <!-- Información Personal -->
+        <section class="form-section">
+            <h2>Información Personal</h2>
+            <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="appointment.name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono de contacto *</label>
+                <input type="tel" id="telefono" name="telefono" [(ngModel)]="appointment.phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" [(ngModel)]="appointment.email" required>
+            </div>
+        </section>
+
+        <!-- Tipo de Proyecto -->
+        <section class="form-section">
+            <h2>Tipo de Proyecto *</h2>
+            
+            <div class="form-group">
+                <label class="radio-option">
+                    <input type="radio" name="tipoProyecto" value="Cocina" [checked]="appointment.projectType === 'Cocina'" (change)="onTipoProyectoChange($event)">
+                    Cocina
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="tipoProyecto" value="Clóset" [checked]="appointment.projectType === 'Clóset'" (change)="onTipoProyectoChange($event)">
+                    Clóset
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="tipoProyecto" value="Vestidores" [checked]="appointment.projectType === 'Vestidores'" (change)="onTipoProyectoChange($event)">
+                    Vestidores
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="tipoProyecto" value="Muebles de baño" [checked]="appointment.projectType === 'Muebles de baño'" (change)="onTipoProyectoChange($event)">
+                    Muebles de baño
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="tipoProyecto" value="Diseño de interiores" [checked]="appointment.projectType === 'Diseño de interiores'" (change)="onTipoProyectoChange($event)">
+                    Diseño de interiores
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="tipoProyecto" value="Otro" [checked]="appointment.projectType === 'Otro'" (change)="onTipoProyectoChange($event)">
+                    Otro
+                </label>
+            </div>
+
+            <!-- Campo condicional -->
+            <div class="form-group" *ngIf="showOtroInput">
+                <input type="text" id="otroProyectoInput" name="otroProyecto" [(ngModel)]="otroProyecto" (input)="onOtroProyectoChange($event)"
+                    placeholder="Ej. Alambrín, tapicería, etc.">
+            </div>
+        </section>
+
+        <!-- Domicilio -->
+        <section class="form-section">
+            <h2>Domicilio</h2>
+            <div class="form-group">
+                <label for="calle">Calle *</label>
+                <input type="text" id="calle" name="calle" [(ngModel)]="appointment.address.street" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numero">Número *</label>
+                <input type="text" id="numero" name="numero" [(ngModel)]="appointment.address.number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="codigoPostal">Código Postal *</label>
+                <input type="text" id="codigoPostal" name="codigoPostal" [(ngModel)]="appointment.address.zipCode" required>
+            </div>
+
+            <div class="form-group">
+                <label for="colonia">Colonia o Fraccionamiento *</label>
+                <input type="text" id="colonia" name="colonia" [(ngModel)]="appointment.address.neighborhood" required>
+            </div>
+        </section>
+
+        <!-- Detalles de la Cita -->
+        <section class="form-section">
+            <h2>Detalles de la Cita</h2>
+            <div class="form-group">
+                <label for="fecha">Fecha y hora Preferida *</label>
+                <p-datepicker inputId="calendar-24h" [(ngModel)]="appointment.date" [showTime]="true" [hourFormat]="'24'"
+                    [showIcon]="true" [showOnFocus]="false" (onSelect)="onDateChange($event)" />
+            </div>
+        </section>
+
+        <!-- Comentarios -->
+        <section class="form-section">
+            <h2>Comentarios o Requerimientos Específicos</h2>
+            <div class="form-group">
+                <textarea id="comentarios" name="comentarios" rows="4" [(ngModel)]="appointment.message"
+                    placeholder="Ej. 'Cocina estilo moderno, espacio reducido', 'Closet para recámara principal', etc."></textarea>
+            </div>
+        </section>
+
+        <button type="submit" class="submit-button">Enviar Solicitud</button>
+    </form>
+    <div class="contact-form-container-final">
+        <p>Nuestro equipo se contactara con usted para agendar la fecha y hora definitiva</p>
+    </div>
+</main>

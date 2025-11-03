@@ -1,0 +1,13 @@
+<!-- Versión personalizada (comentada para usar PrimeNG) -->
+<!--
+<nav>
+    <a routerLink="/" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true}">Inicio</a>
+    <a [routerLink]="['/cocina']" [routerLinkActive]="'active'">Servicios</a>
+    <a>Nosotros</a>
+    <a [routerLink]="['/contacto']" [routerLinkActive]="'active'">Contacto</a>
+</nav>
+-->
+
+<!-- Versión PrimeNG con estilos adaptados -->
+<p-menubar [model]="items" *ngIf="!loading"></p-menubar>

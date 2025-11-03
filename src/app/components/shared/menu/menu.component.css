@@ -1,0 +1,318 @@
+* {
+	line-height: 1.5;
+	font-family: "Garamond", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-size: 25px;
+}
+
+/* Estilos para PrimeNG Menubar adaptados al diseño original */
+:host ::ng-deep .p-menubar {
+	background-color: #1b1710a2;
+	border: none;
+	border-radius: 0;
+	padding: 8.75px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	display: flex;
+	justify-content: center !important;
+	align-items: center;
+}
+
+/* Botón de menú móvil - Personalizado */
+:host ::ng-deep .p-menubar-button {
+	display: none !important;
+	background: transparent !important;
+	border: none !important;
+	color: #F2EEDD !important;
+	font-size: 1.5rem !important;
+	padding: 0.5rem !important;
+	margin-left: auto !important;
+	cursor: pointer;
+}
+
+:host ::ng-deep .p-menubar-button:hover {
+	color: #EDDC94 !important;
+	background: transparent !important;
+}
+
+/* Contenedor principal - CLAVE para el centrado */
+:host ::ng-deep .p-menubar .p-menubar-start,
+:host ::ng-deep .p-menubar .p-menubar-end {
+	display: none !important;
+}
+
+/* Lista principal del menú - Corregido para centrado perfecto */
+@media (min-width: 769px) {
+	:host ::ng-deep .p-menubar-root-list {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+		width: auto !important;
+		margin: 0 auto !important;
+		padding: 0 !important;
+		background: transparent !important;
+		border: none !important;
+		flex-wrap: nowrap !important;
+	}
+}
+
+/* Items principales del menú */
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem {
+	position: relative;
+	display: flex !important;
+	align-items: center !important;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+	color: #F2EEDD;
+	font-family: "Garamond", sans-serif;
+	font-size: 25px;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	background: transparent;
+	border: none;
+	margin-bottom: 10px;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+	color: #EDDC94;
+	transform: translateY(-10px);
+	background: transparent;
+}
+
+/* Ocultar iconos para que se vea como el original */
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+	display: none;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
+	display: none;
+}
+
+/* Submenús */
+:host ::ng-deep .p-menubar .p-submenu-list {
+	background-color: #1b1710a2;
+	border: none;
+	padding: 0.5rem 0;
+	min-width: 12rem;
+}
+
+:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+	color: #F2EEDD;
+	font-family: "Garamond", sans-serif;
+	font-size: 20px;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link:hover {
+	background-color: rgba(237, 220, 148, 0.1);
+	color: #EDDC94;
+}
+
+/* Línea decorativa inferior - Reposicionada */
+:host ::ng-deep .p-menubar::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 8px;
+	background-color: #EDDC94;
+	height: 3px;
+	width: 60%;
+	max-width: 400px;
+}
+
+/* Estados activos */
+:host ::ng-deep .p-menubar .p-menuitem-link[aria-current="page"] {
+	color: #EDDC94;
+}
+
+/* Responsive styles - Mejorados */
+@media screen and (max-width: 1200px) {
+	* {
+		font-size: 22px;
+	}
+	
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 22px;
+		padding: 0.4rem 0.8rem;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 18px;
+	}
+
+	:host ::ng-deep .p-menubar::after {
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	* {
+		font-size: 18px;
+	}
+
+	:host ::ng-deep .p-menubar {
+		padding: 7px;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 18px;
+		padding: 0.4rem 0.7rem;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 16px;
+	}
+
+	:host ::ng-deep .p-menubar::after {
+		width: 70%;
+		bottom: 6px;
+	}
+}
+
+/* BREAKPOINT MÓVIL - Aquí cambia todo */
+@media screen and (max-width: 768px) {
+	* {
+		font-size: 16px;
+	}
+
+	/* Activar botón hamburguesa */
+	:host ::ng-deep .p-menubar-button {
+		display: block !important;
+	}
+
+	:host ::ng-deep .p-menubar {
+		padding: 10px 15px;
+		justify-content: space-between !important;
+	}
+
+	/* Menú móvil - OCULTO por defecto, PrimeNG lo controla */
+	:host ::ng-deep .p-menubar-root-list {
+		justify-content: flex-start !important;
+		margin: 0 !important;
+		flex-direction: column !important;
+		position: absolute !important;
+		top: 100% !important;
+		left: 0 !important;
+		width: 100% !important;
+		background-color: #1b1710a2 !important;
+		padding: 1rem 0 !important;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+		/* REMOVIDO: display y visibility - PrimeNG los maneja */
+	}
+
+	/* Cuando el menú está activo (PrimeNG añade esta clase) */
+	:host ::ng-deep .p-menubar.p-menubar-mobile-active .p-menubar-root-list {
+		display: flex !important;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem {
+		width: 100% !important;
+		border-bottom: 1px solid rgba(242, 238, 221, 0.1);
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 16px;
+		padding: 1rem 1.5rem;
+		margin-bottom: 0;
+		justify-content: flex-start !important;
+		width: 100%;
+		text-align: left;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+		transform: none;
+		background-color: rgba(237, 220, 148, 0.1);
+	}
+
+	/* Línea decorativa móvil */
+	:host ::ng-deep .p-menubar::after {
+		display: none;
+	}
+
+	/* Submenús móvil */
+	:host ::ng-deep .p-menubar .p-submenu-list {
+		position: static !important;
+		box-shadow: none !important;
+		background-color: rgba(27, 23, 16, 0.8) !important;
+		margin-left: 1rem;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 14px;
+		padding: 0.75rem 2rem;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	* {
+		font-size: 14px;
+	}
+
+	:host ::ng-deep .p-menubar {
+		padding: 8px 12px;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 15px;
+		padding: 0.9rem 1.2rem;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 13px;
+		padding: 0.7rem 1.8rem;
+	}
+
+	:host ::ng-deep .p-menubar-button {
+		font-size: 1.3rem !important;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	* {
+		font-size: 13px;
+	}
+
+	:host ::ng-deep .p-menubar {
+		padding: 6px 10px;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 14px;
+		padding: 0.8rem 1rem;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 12px;
+		padding: 0.6rem 1.5rem;
+	}
+
+	:host ::ng-deep .p-menubar-button {
+		font-size: 1.2rem !important;
+		padding: 0.4rem !important;
+	}
+}
+
+/* Ajuste específico para pantallas muy pequeñas */
+@media screen and (max-width: 350px) {
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 13px;
+		padding: 0.7rem 0.8rem;
+	}
+	
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 11px;
+		padding: 0.5rem 1.2rem;
+	}
+}
