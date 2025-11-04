@@ -1,7 +1,8 @@
 # Todo Muebles Web
 
 Angular web page for Todo Muebles, a furniture business website.
-Note: This website is intented to be manages with the Todo Muebles Dashboard Project 
+
+Note: This website is intented to be managedwith the Todo Muebles Dashboard Project 
 
 ## 🚀 Features
 
@@ -30,8 +31,8 @@ Note: This website is intented to be manages with the Todo Muebles Dashboard Pro
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd santino-web
+git clone https://github.com/Ferbox44/todoMueblesWeb
+cd todoMueblesWeb
 ```
 
 2. Install dependencies:
