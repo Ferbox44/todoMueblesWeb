@@ -4,9 +4,9 @@ Angular web page for Todo Muebles, a furniture business website.
 
 **Access Credentials**
 
-User: demoprofile@example.com
+User: ```demoprofile@example.com```
 
-Password: DemoProfile#
+Password:```DemoProfile#```
 
 _(Credentials for testing purposes only)_
 
