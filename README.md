@@ -2,7 +2,12 @@
 
 Angular web page for Todo Muebles, a furniture business website.
 
-Note: This website is intented to be managedwith the Todo Muebles Dashboard Project 
+Note: This website is intented to be managedwith the Todo Muebles Dashboard Project:
+
+```bash
+https://github.com/Ferbox44/todoMueblesDashboard-frontend
+https://github.com/Ferbox44/todoMueblesDashboard-backend
+```
 
 ## 🚀 Features
 
