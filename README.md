@@ -12,6 +12,16 @@ _(Credentials for testing purposes only)_
 
 Note: This website is intented to be managedwith the Todo Muebles Dashboard Project:
 
+**Public site:**
+```bash
+http://todo-muebles-web.s3-website.us-east-2.amazonaws.com
+```
+**Admin Panel:**
+``` bash 
+http://todo-muebles-dashboard.s3-website.us-east-2.amazonaws.com
+```
+
+
 ```bash
 https://github.com/Ferbox44/todoMueblesDashboard-frontend
 ```
